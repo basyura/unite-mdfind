@@ -15,3 +15,7 @@
 ## you can define map to action
 
     inoremap <silent><buffer><expr> <C-s> unite#do_action('mdfind')
+
+## Inspired by
+
+* unite-everything
