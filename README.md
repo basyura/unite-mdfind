@@ -1,5 +1,7 @@
 # unite-mdfind
 
+gather candidates by mdfind (mac only).
+
 ## unite source
 
     :Unite mdfind
