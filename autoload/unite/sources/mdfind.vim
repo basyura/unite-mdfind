@@ -22,7 +22,11 @@ function! s:build_command(args, context)
   if len(a:args) > 0
     let cmd .= ' -onlyin ' . a:args[0]
   end
-  let cmd .=' -name ' . a:context.input
+  "let cmd .=' -name ' . a:context.input
+  " fuzzy match
+  let input = substitute(substitute(unite#util#escape_match(a:context.input),
+                                    \ '[[:alnum:]._-]', '\0*', 'g'), '\*\*', '*', 'g')
+  let cmd .= " \"kMDItemFSName == '" . input . "'\""
   return cmd
 endfunction
 
