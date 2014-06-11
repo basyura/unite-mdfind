@@ -9,7 +9,7 @@
 ## unite action
 
 * :Unite file
-* <Tab>
+* &lt;Tab&gt;
 * you can select mdfind action
 
 ## you can define map to action
