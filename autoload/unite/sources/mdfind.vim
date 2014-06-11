@@ -3,7 +3,7 @@ let s:source =
       \ { 'name'                    : 'mdfind'
       \ , 'description'             : 'candidates from mdfind'
       \ , 'max_candidates'          : 100
-      \ , 'required_pattern_length' : 3
+      \ , 'required_pattern_length' : 5
       \ , 'hooks' : {}
       \ }
 
