@@ -3,7 +3,7 @@ let s:source =
       \ { 'name'                    : 'mdfind'
       \ , 'description'             : 'candidates from mdfind'
       \ , 'max_candidates'          : 100
-      \ , 'required_pattern_length' : 5
+      \ , 'required_pattern_length' : 3
       \ , 'hooks' : {}
       \ }
 
@@ -24,9 +24,10 @@ function! s:build_command(args, context)
   end
   "let cmd .=' -name ' . a:context.input
   " fuzzy match
-  let input = substitute(substitute(unite#util#escape_match(a:context.input),
-                                    \ '[[:alnum:]._-]', '\0*', 'g'), '\*\*', '*', 'g')
-  let cmd .= " \"kMDItemFSName == '" . input . "'\""
+  "let input = substitute(substitute(unite#util#escape_match(a:context.input),
+                                    "\ '[[:alnum:]._-]', '\0*', 'g'), '\*\*', '*', 'g')
+  "let cmd .= " \"kMDItemFSName == '" . input . "'\""
+  let cmd .= " " . a:context.input
   return cmd
 endfunction
 
